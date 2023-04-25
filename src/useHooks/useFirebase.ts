@@ -25,8 +25,8 @@ export default function useFirebase(){
     auth.onAuthStateChanged(function (user) {
         if(user && currentUser.email !== user.email){
             setCurrentUser({
-                email: user.email,
-                displayName: user.displayName
+                email: user.email!,
+                displayName: user.displayName!
             });
         } else if(!user && currentUser.email){
             setCurrentUser(initialUser);
