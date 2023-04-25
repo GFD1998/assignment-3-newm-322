@@ -23,7 +23,7 @@ console.log('Generating nav bar here.');
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <nav>
+      {/* <nav>
         <ul>
           <li>
             <Link href='/'>Home</Link>
@@ -39,12 +39,10 @@ export default function App({ Component, pageProps }: AppProps) {
       </nav>
       <header>
           <img src='/images/hero.jpg' />
-      </header>
+      </header> */}
+      
       <Component {...pageProps} />
-      <footer>
-        {/* <p>
-          &copy; The Soap Factory
-        </p> */}
+      {/* <footer>
         <Modal trigger='&copy; The Soap Factory'>
           Copyright of The Soap Factory<br />
           Trademark of The Soap Factory
@@ -53,7 +51,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Modal trigger='Terms and Conditions'>
           List of terms and conditions.
         </Modal>
-      </footer>
+      </footer> */}
     </>
   )
   return <Component {...pageProps} />
