@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   const firebaseVar = useFirebase();
-  const [booksList, setBooksList] = React.useState([]);
+  const [booksList, setBooksList] = React.useState<any>([]);
 
   const booksListComponents = booksList.map(book => {
     return <li key={book['id']}>{book['name']}</li>;
