@@ -52,7 +52,7 @@ export default function useFirebase(){
                 const bookData = book.data();
                 booksList.push({
                     ...bookData,
-                    id: book.id,
+                    id: book.id
                 });
             }
             return booksList;
