@@ -1,13 +1,15 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import Link from 'next/link';
+import useFirebase from '@/useHooks/useFirebase';
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const firebaseVar = useFirebase();
   return (
     <>
-      <h1>My name is: {process.env.NEXT_PUBLIC_MY_NAME}</h1>
+      <h1>My name is: {firebaseVar.currentUser.displayName || '--'}</h1>
     </>
     // <div id='home-container'>
     //   <p>

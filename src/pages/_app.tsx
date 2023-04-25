@@ -13,14 +13,14 @@ import '/src/styles/pageStyles/products.css';
 /* Footer Imports */
 import '/src/styles/footer.css';
 
-
-
-import type { AppProps } from 'next/app'
+import React from 'react';
 import Link from 'next/link';
-import Modal from '../components/Modal';
+import useFirebase from '@/useHooks/useFirebase';
 
 console.log('Generating nav bar here.');
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }:any) {
+  const firebaseVar = useFirebase();
+  console.log(firebaseVar.currentUser);
   return (
     <>
       {/* <nav>
@@ -40,7 +40,19 @@ export default function App({ Component, pageProps }: AppProps) {
       <header>
           <img src='/images/hero.jpg' />
       </header> */}
-      
+      <nav>
+        <ul>
+          <li>
+            <Link href='/'>Home</Link>
+          </li>
+          <li>
+            <button onClick={firebaseVar.loginUser}>Login</button>
+          </li>
+          <li>
+            <button onClick={firebaseVar.logoutUser}>Logout</button>
+          </li>
+        </ul>
+      </nav>
       <Component {...pageProps} />
       {/* <footer>
         <Modal trigger='&copy; The Soap Factory'>
@@ -54,5 +66,5 @@ export default function App({ Component, pageProps }: AppProps) {
       </footer> */}
     </>
   )
-  return <Component {...pageProps} />
+  // return <Component {...pageProps} />
 }
